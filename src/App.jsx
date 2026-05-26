@@ -153,8 +153,8 @@ function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b ${
-        scrolled ? 'border-slate-200 shadow-sm py-3' : 'border-transparent py-4'
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-navy-950/90 backdrop-blur-md border-b border-cyan-accent/10 py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -162,18 +162,18 @@ function Nav() {
           <img
             src="/logo.png"
             alt="AMAF Soluciones"
-            className="w-11 h-11 md:w-12 md:h-12 object-contain"
+            className="w-11 h-11 md:w-12 md:h-12 object-contain drop-shadow-[0_4px_12px_rgba(34,211,238,0.25)]"
           />
           <div className="hidden sm:flex flex-col leading-tight">
-            <span className="font-display font-bold text-navy-950 text-lg tracking-tight">AMAF</span>
-            <span className="text-[10px] text-cyan-deep uppercase tracking-[0.2em]">Soluciones</span>
+            <span className="font-display font-bold text-white text-lg tracking-tight">AMAF</span>
+            <span className="text-[10px] text-cyan-accent/80 uppercase tracking-[0.2em]">Soluciones</span>
           </div>
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (
             <li key={n.href}>
-              <a href={n.href} className="text-sm text-slate-900 hover:text-cyan-deep transition-colors">
+              <a href={n.href} className="text-sm text-slate-300 hover:text-cyan-accent transition-colors">
                 {n.label}
               </a>
             </li>
@@ -184,7 +184,7 @@ function Nav() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noreferrer"
-          className="hidden md:inline-flex items-center gap-2 bg-cyan-deep hover:bg-cyan-accent text-white hover:text-navy-950 font-semibold px-5 py-2.5 rounded-lg text-sm transition-all hover:shadow-lg hover:shadow-cyan-accent/30"
+          className="hidden md:inline-flex items-center gap-2 bg-cyan-accent hover:bg-cyan-deep text-navy-950 hover:text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-all hover:shadow-lg hover:shadow-cyan-accent/30"
         >
           Solicitar presupuesto
           <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
@@ -193,7 +193,7 @@ function Nav() {
         </a>
 
         <button
-          className="md:hidden text-navy-950 p-2"
+          className="md:hidden text-white p-2"
           onClick={() => setOpen(!open)}
           aria-label="Abrir menú"
         >
@@ -204,14 +204,14 @@ function Nav() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 mt-3">
+        <div className="md:hidden bg-navy-950/95 backdrop-blur-md border-t border-cyan-accent/10 mt-3">
           <ul className="px-6 py-4 space-y-3">
             {NAV.map((n) => (
               <li key={n.href}>
                 <a
                   href={n.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-slate-900 hover:text-cyan-deep"
+                  className="block py-2 text-slate-200 hover:text-cyan-accent"
                 >
                   {n.label}
                 </a>
