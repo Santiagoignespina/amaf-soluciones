@@ -158,16 +158,12 @@ function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3 group">
+        <a href="#top" className="flex items-center group">
           <img
             src="/logo.png"
             alt="AMAF Soluciones"
             className="w-11 h-11 md:w-12 md:h-12 object-contain drop-shadow-[0_4px_12px_rgba(34,211,238,0.25)]"
           />
-          <div className="hidden sm:flex flex-col leading-tight">
-            <span className="font-display font-bold text-white text-lg tracking-tight">AMAF</span>
-            <span className="text-[10px] text-cyan-accent/80 uppercase tracking-[0.2em]">Soluciones</span>
-          </div>
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
