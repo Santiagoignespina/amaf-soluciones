@@ -8,9 +8,7 @@ const LOCATION = 'Partido de La Costa, Buenos Aires'
 
 const NAV = [
   { href: '#servicios', label: 'Servicios' },
-  { href: '#segmentos', label: 'Para quién' },
   { href: '#por-que', label: 'Por qué AMAF' },
-  { href: '#galeria', label: 'Galería' },
   { href: '#contacto', label: 'Contacto' },
 ]
 
@@ -63,33 +61,6 @@ const SERVICIOS = [
   },
 ]
 
-const SEGMENTOS = [
-  {
-    titulo: 'Hogares',
-    desc: 'Conectividad y seguridad para tu familia: cámaras, alarmas y red estable.',
-    icon: '🏠',
-    color: 'from-cyan-accent/20 to-cyan-accent/5',
-  },
-  {
-    titulo: 'Comercios',
-    desc: 'Control y monitoreo 24/7 + redes confiables para tu negocio.',
-    icon: '🏪',
-    color: 'from-gold-accent/20 to-gold-accent/5',
-  },
-  {
-    titulo: 'Industrias e ISP',
-    desc: 'Fibra troncal, FTTH, enlaces inalámbricos y Starlink para operación crítica.',
-    icon: '🏭',
-    color: 'from-cyan-deep/30 to-cyan-deep/5',
-  },
-  {
-    titulo: 'Flotas y vehículos',
-    desc: 'Rastreo GPS y monitoreo de unidades para empresas con flota.',
-    icon: '🚗',
-    color: 'from-cyan-accent/20 to-cyan-accent/5',
-  },
-]
-
 const CIFRAS = [
   { num: '+10', label: 'años de trayectoria' },
   { num: '+500', label: 'proyectos ejecutados' },
@@ -131,15 +102,6 @@ const COBERTURA = [
   'Mar de Ajó',
   'Pinamar',
   'Villa Gesell',
-]
-
-const GALERIA = [
-  { cat: 'CCTV', titulo: 'Cámaras IP perimetrales', desc: 'Cobertura completa con visión nocturna' },
-  { cat: 'Fibra óptica', titulo: 'Tendido FTTH', desc: 'Red troncal para ISP local' },
-  { cat: 'Alarmas', titulo: 'Central Garnet', desc: 'Sistema monitoreado 24/7' },
-  { cat: 'Racks', titulo: 'Cableado estructurado', desc: 'Rack profesional documentado' },
-  { cat: 'Starlink', titulo: 'Instalación industrial', desc: 'Montaje certificado en altura' },
-  { cat: 'Control de acceso', titulo: 'Lectores biométricos', desc: 'Acceso por huella y tarjeta' },
 ]
 
 function Nav() {
@@ -387,34 +349,6 @@ function Servicios() {
   )
 }
 
-function Segmentos() {
-  return (
-    <section id="segmentos" className="py-24 bg-navy-900/40 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-cyan-accent text-sm uppercase tracking-[0.3em] mb-3">Para quién trabajamos</p>
-          <h2 className="font-display font-bold text-white text-3xl md:text-5xl mb-4 tracking-tight">
-            Soluciones adaptadas a tu realidad
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {SEGMENTOS.map((s) => (
-            <div
-              key={s.titulo}
-              className={`relative bg-gradient-to-br ${s.color} bg-navy-800/40 border border-slate-800 hover:border-cyan-accent/40 rounded-xl p-6 transition-all hover:-translate-y-1 group`}
-            >
-              <div className="text-4xl mb-4">{s.icon}</div>
-              <h3 className="font-display font-bold text-white text-lg mb-2">{s.titulo}</h3>
-              <p className="text-slate-300 text-sm">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function PorQue() {
   return (
     <section id="por-que" className="py-24 md:py-32 relative">
@@ -481,67 +415,6 @@ function PorQue() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Galeria() {
-  return (
-    <section id="galeria" className="py-24 bg-navy-900/40 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-          <div>
-            <p className="text-cyan-accent text-sm uppercase tracking-[0.3em] mb-3">Galería de trabajos</p>
-            <h2 className="font-display font-bold text-white text-3xl md:text-5xl tracking-tight">
-              Instalaciones reales y comprobables
-            </h2>
-          </div>
-          <p className="text-slate-400 mt-4 md:mt-0 md:max-w-md">
-            Lo que hacemos, con orden, precisión y resultados visibles.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {GALERIA.map((g, i) => (
-            <div
-              key={g.titulo}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-accent/40 transition-all"
-            >
-              <div
-                className="absolute inset-0 bg-gradient-to-br"
-                style={{
-                  background: `linear-gradient(135deg, hsl(${190 + i * 12} 70% 20%), hsl(${210 + i * 8} 60% 12%))`,
-                }}
-              />
-              <div className="absolute inset-0 grid-bg opacity-30" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/40 to-transparent" />
-              <div className="absolute top-4 left-4">
-                <span className="inline-block px-3 py-1 rounded-full bg-cyan-accent/20 backdrop-blur-sm border border-cyan-accent/30 text-cyan-accent text-xs font-medium">
-                  {g.cat}
-                </span>
-              </div>
-              <div className="absolute bottom-0 inset-x-0 p-5">
-                <h3 className="font-display font-bold text-white text-lg">{g.titulo}</h3>
-                <p className="text-slate-300 text-sm">{g.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-cyan-accent hover:text-white transition-colors"
-          >
-            Pedinos fotos de proyectos similares al tuyo
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H4a1 1 0 110-2h8.586l-2.293-2.293a1 1 0 010-1.414z" />
-            </svg>
-          </a>
         </div>
       </div>
     </section>
@@ -847,9 +720,7 @@ export default function App() {
       <Hero />
       <CertBar />
       <Servicios />
-      <Segmentos />
       <PorQue />
-      <Galeria />
       <Testimonios />
       <Cobertura />
       <Contacto />
