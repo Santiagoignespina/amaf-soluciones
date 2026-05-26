@@ -42,6 +42,7 @@ const SERVICIOS = [
     titulo: 'CCTV y videovigilancia',
     desc: 'Cámaras IP y analíticas inteligentes para hogares, comercios e industrias. Certificación oficial Dahua.',
     bullets: ['Cámaras 4K día y noche', 'Visualización remota en vivo', 'Analítica con detección IA', 'NVR con respaldo y grabación'],
+    imgs: ['/cctv-1.jpg', '/cctv-2.jpg', '/cctv-3.jpg'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-7 h-7">
         <path d="M3 7h13a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H3z" />
