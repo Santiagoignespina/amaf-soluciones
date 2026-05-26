@@ -68,13 +68,6 @@ const CIFRAS = [
   { num: '4', label: 'certificaciones oficiales' },
 ]
 
-const CERTIFICACIONES = [
-  { nombre: 'Dahua', desc: 'Líder mundial en videovigilancia IoT' },
-  { nombre: 'Garnet Academy', desc: 'Fabricante argentino de alarmas profesionales' },
-  { nombre: 'TP-Link', desc: 'Networking certificado desde 1996' },
-  { nombre: 'GLC', desc: 'Soluciones ópticas y de fibra' },
-]
-
 const TESTIMONIOS = [
   {
     texto: 'Nos resolvieron pérdidas de señal críticas. La red quedó estable y preparada para crecer.',
@@ -259,31 +252,6 @@ function Hero() {
                 {c.num}
               </div>
               <div className="text-xs md:text-sm text-slate-400 mt-1">{c.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function CertBar() {
-  return (
-    <section className="relative py-12 bg-navy-900/40 border-y border-slate-800">
-      <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-xs uppercase tracking-[0.3em] text-slate-500 mb-8">
-          Certificaciones oficiales
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {CERTIFICACIONES.map((c) => (
-            <div
-              key={c.nombre}
-              className="group bg-navy-800/40 border border-slate-800 hover:border-cyan-accent/40 rounded-xl p-5 transition-all"
-            >
-              <div className="font-display font-bold text-white text-xl md:text-2xl group-hover:text-cyan-accent transition-colors">
-                {c.nombre}
-              </div>
-              <div className="text-xs text-slate-400 mt-1">{c.desc}</div>
             </div>
           ))}
         </div>
@@ -718,7 +686,6 @@ export default function App() {
     <div className="min-h-screen bg-navy-950 text-slate-200">
       <Nav />
       <Hero />
-      <CertBar />
       <Servicios />
       <PorQue />
       <Testimonios />
