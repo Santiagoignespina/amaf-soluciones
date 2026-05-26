@@ -30,6 +30,7 @@ const SERVICIOS = [
     titulo: 'Starlink industrial y rural',
     desc: 'Instalación y configuración profesional de Starlink en entornos exigentes: viento, polvo, altura y operación continua.',
     bullets: ['Montaje certificado en altura', 'Aislación contra interferencias', 'Routing y red interna estable', 'Soporte y monitoreo continuo'],
+    imgs: ['/starlink-1.jpg', '/starlink-2.jpg', '/starlink-3.jpg'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-7 h-7">
         <path d="M2 12a10 10 0 0 1 20 0M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 12v8M9 20h6" />
