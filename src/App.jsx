@@ -239,11 +239,11 @@ function Hero() {
         muted
         playsInline
         poster="/portada-poster.jpg"
-        className="absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover opacity-65 pointer-events-none"
       >
         <source src="/portada.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/70 via-navy-950/85 to-navy-950 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/50 via-navy-950/70 to-navy-950 pointer-events-none" />
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div className="absolute inset-0 gradient-radial pointer-events-none" />
       <div className="absolute top-20 right-1/4 w-72 h-72 bg-cyan-accent/10 rounded-full blur-3xl pointer-events-none" />
