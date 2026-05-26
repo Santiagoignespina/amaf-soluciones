@@ -18,6 +18,7 @@ const SERVICIOS = [
     titulo: 'Fibra óptica · FTTH / FTTX',
     desc: 'Diseño, tendido, fusiones, ODF y certificación. Redes troncales y de distribución para ISP, barrios privados e industria.',
     bullets: ['Tendido aéreo y subterráneo', 'Fusiones y empalmes certificados', 'ODF etiquetado y documentado', 'Mantenimiento correctivo 24/7'],
+    imgs: ['/fibra-1.jpg', '/fibra-2.jpg', '/fibra-3.jpg'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-7 h-7">
         <path d="M3 12c3 0 4-4 9-4s6 4 9 4M3 18c3 0 4-4 9-4s6 4 9 4M3 6c3 0 4-4 9-4s6 4 9 4" />
@@ -260,6 +261,41 @@ function Hero() {
   )
 }
 
+function ImageCarousel({ imgs, alt }) {
+  const [idx, setIdx] = useState(0)
+  useEffect(() => {
+    const t = setInterval(() => setIdx((i) => (i + 1) % imgs.length), 2000)
+    return () => clearInterval(t)
+  }, [imgs.length])
+
+  return (
+    <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6 -mx-2 sm:mx-0 border border-slate-800">
+      {imgs.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={`${alt} ${i + 1}`}
+          loading="lazy"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            i === idx ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+        {imgs.map((_, i) => (
+          <span
+            key={i}
+            className={`h-1.5 rounded-full transition-all ${
+              i === idx ? 'w-6 bg-cyan-accent' : 'w-1.5 bg-white/40'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function Servicios() {
   return (
     <section id="servicios" className="py-24 md:py-32 relative">
@@ -282,6 +318,7 @@ function Servicios() {
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-accent/5 rounded-full blur-3xl group-hover:bg-cyan-accent/15 transition-all" />
               <div className="relative">
+                {s.imgs && <ImageCarousel imgs={s.imgs} alt={s.titulo} />}
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-accent/20 to-cyan-deep/20 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent mb-5">
                   {s.icon}
                 </div>
