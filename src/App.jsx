@@ -19,11 +19,6 @@ const SERVICIOS = [
     desc: 'Diseño, tendido, fusiones, ODF y certificación. Redes troncales y de distribución para ISP, barrios privados e industria.',
     bullets: ['Tendido aéreo y subterráneo', 'Fusiones y empalmes certificados', 'ODF etiquetado y documentado', 'Mantenimiento correctivo 24/7'],
     imgs: ['/fibra-1.jpg', '/fibra-2.jpg', '/fibra-3.jpg'],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-7 h-7">
-        <path d="M3 12c3 0 4-4 9-4s6 4 9 4M3 18c3 0 4-4 9-4s6 4 9 4M3 6c3 0 4-4 9-4s6 4 9 4" />
-      </svg>
-    ),
   },
   {
     key: 'starlink',
@@ -31,11 +26,6 @@ const SERVICIOS = [
     desc: 'Instalación y configuración profesional de Starlink en entornos exigentes: viento, polvo, altura y operación continua.',
     bullets: ['Montaje certificado en altura', 'Aislación contra interferencias', 'Routing y red interna estable', 'Soporte y monitoreo continuo'],
     imgs: ['/starlink-1.jpg', '/starlink-2.jpg', '/starlink-3.jpg'],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-7 h-7">
-        <path d="M2 12a10 10 0 0 1 20 0M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 12v8M9 20h6" />
-      </svg>
-    ),
   },
   {
     key: 'cctv',
@@ -43,12 +33,6 @@ const SERVICIOS = [
     desc: 'Cámaras IP y analíticas inteligentes para hogares, comercios e industrias. Certificación oficial Dahua.',
     bullets: ['Cámaras 4K día y noche', 'Visualización remota en vivo', 'Analítica con detección IA', 'NVR con respaldo y grabación'],
     imgs: ['/cctv-1.jpg', '/cctv-2.jpg', '/cctv-3.jpg'],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-7 h-7">
-        <path d="M3 7h13a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H3z" />
-        <path d="M18 10l3-2v8l-3-2M7 21h6" />
-      </svg>
-    ),
   },
   {
     key: 'alarmas',
@@ -56,12 +40,6 @@ const SERVICIOS = [
     desc: 'Centrales de alarma a medida con monitoreo 24/7. Certificación Garnet Academy. Aviso inmediato a fuerzas de seguridad.',
     bullets: ['Diseño según el inmueble', 'Sensores perimetrales e interiores', 'App de control en tu celular', 'Respuesta y aviso a policía'],
     imgs: ['/alarmas-1.jpg', '/alarmas-2.jpg', '/alarmas-3.jpg'],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-7 h-7">
-        <path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" />
-        <path d="M9 12l2 2 4-4" />
-      </svg>
-    ),
   },
 ]
 
@@ -88,17 +66,6 @@ const TESTIMONIOS = [
     autor: 'SetCar',
     lugar: 'San Clemente',
   },
-]
-
-const COBERTURA = [
-  'San Clemente del Tuyú',
-  'Santa Teresita',
-  'Mar del Tuyú',
-  'Las Toninas',
-  'San Bernardo',
-  'Mar de Ajó',
-  'Pinamar',
-  'Villa Gesell',
 ]
 
 function Nav() {
@@ -322,9 +289,6 @@ function Servicios() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-accent/5 rounded-full blur-3xl group-hover:bg-cyan-accent/15 transition-all" />
               <div className="relative">
                 {s.imgs && <ImageCarousel imgs={s.imgs} alt={s.titulo} />}
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-accent/20 to-cyan-deep/20 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent mb-5">
-                  {s.icon}
-                </div>
                 <h3 className="font-display font-bold text-white text-xl md:text-2xl mb-3">{s.titulo}</h3>
                 <p className="text-slate-400 mb-5">{s.desc}</p>
                 <ul className="space-y-2 mb-6">
@@ -469,48 +433,6 @@ function Testimonios() {
               aria-label={`Testimonio ${i + 1}`}
             />
           ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Cobertura() {
-  return (
-    <section className="py-20 bg-navy-900/40 border-y border-slate-800">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="text-cyan-accent text-sm uppercase tracking-[0.3em] mb-3">Cobertura</p>
-            <h2 className="font-display font-bold text-white text-3xl md:text-4xl mb-4 tracking-tight">
-              Trabajamos en toda la Costa Atlántica
-            </h2>
-            <p className="text-slate-400 mb-6">
-              Partido de La Costa y zona de influencia. Si tu localidad no aparece en la lista,
-              consultanos igual: cubrimos proyectos en toda la provincia de Buenos Aires.
-            </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-cyan-accent hover:bg-cyan-deep text-navy-950 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all"
-            >
-              Consultar por mi zona
-            </a>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            {COBERTURA.map((c) => (
-              <div
-                key={c}
-                className="flex items-center gap-2 bg-navy-800/40 border border-slate-800 rounded-lg px-4 py-3"
-              >
-                <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-cyan-accent flex-shrink-0">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm text-slate-200">{c}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -729,7 +651,6 @@ export default function App() {
       <Servicios />
       <PorQue />
       <Testimonios />
-      <Cobertura />
       <Contacto />
       <Footer />
       <WhatsAppFloat />
