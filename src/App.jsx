@@ -55,6 +55,7 @@ const SERVICIOS = [
     titulo: 'Alarmas y control de acceso',
     desc: 'Centrales de alarma a medida con monitoreo 24/7. Certificación Garnet Academy. Aviso inmediato a fuerzas de seguridad.',
     bullets: ['Diseño según el inmueble', 'Sensores perimetrales e interiores', 'App de control en tu celular', 'Respuesta y aviso a policía'],
+    imgs: ['/alarmas-1.jpg', '/alarmas-2.jpg', '/alarmas-3.jpg'],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-7 h-7">
         <path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" />
