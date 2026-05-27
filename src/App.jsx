@@ -345,7 +345,7 @@ function PorQue() {
                 { t: 'Equipo técnico certificado', d: 'Dahua, Garnet Academy, TP-Link y GLC' },
                 { t: 'Servicio integral', d: 'Ingeniería + provisión + ejecución bajo un mismo proveedor' },
                 { t: 'Soporte 24/7', d: 'Asesoramiento y respuesta inmediata ante eventos' },
-                { t: 'Cobertura nacional', d: 'Trabajamos en toda Argentina, no solo en la Costa Atlántica' },
+                { t: 'Cobertura toda la Costa', d: 'San Clemente, Santa Teresita, Pinamar, Villa Gesell y más' },
               ].map((item) => (
                 <li key={item.t} className="flex gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-accent/10 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent">
