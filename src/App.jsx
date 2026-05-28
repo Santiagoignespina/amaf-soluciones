@@ -52,19 +52,69 @@ const CIFRAS = [
 
 const TESTIMONIOS = [
   {
-    texto: 'Nos resolvieron pérdidas de señal críticas. La red quedó estable y preparada para crecer.',
-    autor: 'ISP Local',
-    lugar: 'San Clemente del Tuyú',
+    texto: 'Teníamos una falla crítica por corte de fibra óptica y además necesitábamos relocalizar el puesto de seguridad completo. Resolvieron rápidamente el enlace, cámaras y conectividad.',
+    autor: 'Chacras Marítimas "El Salvaje"',
+    lugar: 'Villa Gesell',
   },
   {
-    texto: 'Nos instalaron las cámaras de forma rápida y profesional. Analizaron el lugar y cubrieron cada zona crítica.',
-    autor: 'Santa Maria Group',
+    texto: 'Se realizó mantenimiento integral del sistema de cámaras y red de internet de la fábrica, mejorando estabilidad y cobertura en toda la planta.',
+    autor: 'Heladerías Alpino',
+    lugar: 'Partido de La Costa',
+  },
+  {
+    texto: 'Implementaron un sistema completo de cámaras y alarma para nuestro centro de distribución, dejando toda la operación monitoreada y segura.',
+    autor: 'CIMES',
+    lugar: 'General Pavón',
+  },
+  {
+    texto: 'Tuvimos problemas constantes de conectividad entre sectores operativos. Se instaló un nuevo tendido de fibra óptica y la red quedó funcionando de manera estable.',
+    autor: 'Complejo Industrial Privado',
+    lugar: 'Mar del Plata',
+  },
+  {
+    texto: 'Necesitábamos monitoreo remoto y cobertura total en exteriores. Instalaron cámaras, enlaces inalámbricos y optimizaron toda la infraestructura existente.',
+    autor: 'Establecimiento Rural Privado',
+    lugar: 'Dolores',
+  },
+  {
+    texto: 'Modernizaron completamente nuestra red interna y el sistema de videovigilancia, logrando mejor rendimiento y administración remota de todos los equipos.',
+    autor: 'Centro Comercial Local',
     lugar: 'Santa Teresita',
   },
   {
-    texto: 'Nos entregaron el ODF listo para operar, con etiquetado claro y cero inconvenientes. Muy recomendable.',
-    autor: 'SetCar',
-    lugar: 'San Clemente',
+    texto: 'El sistema anterior presentaba fallas permanentes y cortes. Se reemplazó la infraestructura crítica y se dejó operativa toda la conectividad del predio.',
+    autor: 'Empresa de Logística',
+    lugar: 'Pinamar',
+  },
+  {
+    texto: 'Realizaron la instalación completa de fibra óptica y enlaces punto a punto para conectar distintas áreas operativas con excelente estabilidad.',
+    autor: 'Parque Industrial Privado',
+    lugar: 'General Madariaga',
+  },
+  {
+    texto: 'Necesitábamos ampliar el sistema de cámaras y mejorar la conectividad general. El trabajo fue rápido, ordenado y sin afectar la operación diaria.',
+    autor: 'Distribuidora Regional',
+    lugar: 'San Clemente del Tuyú',
+  },
+  {
+    texto: 'Se instaló una solución integral de telecomunicaciones con cámaras, red y enlaces inalámbricos para optimizar la seguridad y comunicación interna.',
+    autor: 'Operador de Servicios Industriales',
+    lugar: 'Partido de La Costa',
+  },
+  {
+    texto: 'Desarrollaron la infraestructura de comunicaciones para operación minera, incluyendo red sobre fibra óptica, nodos, servidores y conectividad Starlink en zonas críticas.',
+    autor: 'Proyecto Calcatreu Minera',
+    lugar: 'Río Negro',
+  },
+  {
+    texto: 'Prestación integral de servicios para Cooperativa Telpin, realizando mantenimiento, nuevas obras de fibra óptica e instalaciones FTTH, desde el diseño de red hasta el cliente final.',
+    autor: 'Cooperativa Telpin',
+    lugar: 'Pinamar',
+  },
+  {
+    texto: 'Responsable del mantenimiento de la red de seguridad del predio, incluyendo cámaras, conectividad y sistemas de energías alternativas para operación continua.',
+    autor: 'Chacras Marítimas "El Salvaje"',
+    lugar: 'Villa Gesell',
   },
 ]
 
@@ -345,7 +395,7 @@ function PorQue() {
                 { t: 'Equipo técnico certificado', d: 'Dahua, Garnet Academy, TP-Link y GLC' },
                 { t: 'Servicio integral', d: 'Ingeniería + provisión + ejecución bajo un mismo proveedor' },
                 { t: 'Soporte 24/7', d: 'Asesoramiento y respuesta inmediata ante eventos' },
-                { t: 'Cobertura nacional', d: 'Trabajamos en toda Argentina, no solo en la Costa Atlántica' },
+                { t: 'Cobertura nacional y experiencia en entornos críticos', d: 'Implementamos soluciones de conectividad para industrias, minería y proyectos de alta complejidad técnica.' },
               ].map((item) => (
                 <li key={item.t} className="flex gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-accent/10 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent">
@@ -415,14 +465,14 @@ function Testimonios() {
             </svg>
           </div>
           <div className="text-cyan-accent text-xl mb-4">★★★★★</div>
-          <p className="text-white text-lg md:text-2xl font-display mb-6 min-h-[120px]">
+          <p className="text-white text-lg md:text-xl font-display mb-6 min-h-[200px] md:min-h-[160px]">
             "{TESTIMONIOS[idx].texto}"
           </p>
           <div className="font-semibold text-cyan-accent">{TESTIMONIOS[idx].autor}</div>
           <div className="text-sm text-slate-400">{TESTIMONIOS[idx].lugar}</div>
         </div>
 
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex flex-wrap justify-center gap-2 mt-6">
           {TESTIMONIOS.map((_, i) => (
             <button
               key={i}
