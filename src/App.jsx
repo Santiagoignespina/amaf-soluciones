@@ -18,7 +18,7 @@ const SERVICIOS = [
     titulo: 'Fibra óptica · FTTH / FTTX',
     desc: 'Diseño, tendido, fusiones, ODF y certificación. Redes troncales y de distribución para ISP, barrios privados e industria.',
     bullets: ['Tendido aéreo y subterráneo', 'Fusiones y empalmes certificados', 'ODF etiquetado y documentado', 'Mantenimiento correctivo 24/7'],
-    imgs: ['/fibra-1.jpg', '/fibra-2.jpg', '/fibra-3.jpg'],
+    imgs: ['/fibra-1.jpg', '/fibra-2.jpg'],
   },
   {
     key: 'starlink',
