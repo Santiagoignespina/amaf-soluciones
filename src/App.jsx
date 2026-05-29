@@ -370,6 +370,29 @@ function Servicios() {
   )
 }
 
+function Partners() {
+  return (
+    <section className="py-20 md:py-24 relative">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-10">
+          <p className="text-cyan-accent text-sm uppercase tracking-[0.3em] mb-3">Technology Partners</p>
+          <h2 className="font-display font-bold text-white text-3xl md:text-4xl tracking-tight">
+            Trabajamos con las marcas líderes del rubro
+          </h2>
+        </div>
+        <div className="bg-white/95 border border-cyan-accent/10 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-cyan-accent/5">
+          <img
+            src="/partners.jpg"
+            alt="Technology partners: Cisco, MikroTik, Hikvision, Dahua, Ubiquiti, Starlink, Garnet, GLC, Furukawa"
+            loading="lazy"
+            className="w-full h-auto"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function PorQue() {
   return (
     <section id="por-que" className="py-24 md:py-32 relative">
@@ -697,6 +720,7 @@ export default function App() {
       <Nav />
       <Hero />
       <Servicios />
+      <Partners />
       <PorQue />
       <Testimonios />
       <Contacto />
