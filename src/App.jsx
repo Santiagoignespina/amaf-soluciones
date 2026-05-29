@@ -380,14 +380,12 @@ function Partners() {
             Trabajamos con las marcas líderes del rubro
           </h2>
         </div>
-        <div className="bg-white/95 border border-cyan-accent/10 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-cyan-accent/5">
-          <img
-            src="/partners.jpg"
-            alt="Technology partners: Cisco, MikroTik, Hikvision, Dahua, Ubiquiti, Starlink, Garnet, GLC, Furukawa"
-            loading="lazy"
-            className="w-full h-auto"
-          />
-        </div>
+        <img
+          src="/partners.jpg"
+          alt="Technology partners: Cisco, MikroTik, Hikvision, Dahua, Ubiquiti, Starlink, Garnet, GLC, Furukawa"
+          loading="lazy"
+          className="w-full h-auto rounded-2xl"
+        />
       </div>
     </section>
   )
