@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 const WHATSAPP_URL = 'https://wa.me/5492246508672?text=Hola%20AMAF%2C%20quiero%20consultar%20por%20sus%20servicios'
 const EMAIL = 'info@amaf.com.ar'
 const PHONE_DISPLAY = '+54 2246 15-508672'
-const PHONE_ALT = '02246 521921'
 const LOCATION = 'Partido de La Costa, Buenos Aires'
 
 const NAV = [
@@ -18,14 +17,14 @@ const SERVICIOS = [
     titulo: 'Fibra óptica · FTTH / FTTX',
     desc: 'Diseño, tendido, fusiones, ODF y certificación. Redes troncales y de distribución para ISP, barrios privados e industria.',
     bullets: ['Tendido aéreo y subterráneo', 'Fusiones y empalmes certificados', 'ODF etiquetado y documentado', 'Mantenimiento correctivo 24/7'],
-    imgs: ['/fibra-1.jpg', '/fibra-2.jpg'],
+    imgs: ['/fibra-1.jpg', '/fibra-2.jpg', '/fibra-3.jpg', '/fibra-4.jpg'],
   },
   {
     key: 'starlink',
     titulo: 'Starlink industrial y rural',
     desc: 'Instalación y configuración profesional de Starlink en entornos exigentes: viento, polvo, altura y operación continua.',
     bullets: ['Montaje certificado en altura', 'Aislación contra interferencias', 'Routing y red interna estable', 'Soporte y monitoreo continuo'],
-    imgs: ['/starlink-1.jpg', '/starlink-2.jpg', '/starlink-3.jpg'],
+    imgs: ['/starlink-1.jpg', '/starlink-2.jpg', '/starlink-3.jpg', '/starlink-4.jpg', '/starlink-5.jpg'],
   },
   {
     key: 'cctv',
@@ -413,24 +412,24 @@ function PorQue() {
           </div>
 
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-cyan-accent/20 via-cyan-deep/10 to-navy-900 border border-cyan-accent/20 p-8 relative overflow-hidden">
+            <div className="lg:aspect-square rounded-3xl bg-gradient-to-br from-cyan-accent/20 via-cyan-deep/10 to-navy-900 border border-cyan-accent/20 p-6 sm:p-8 relative overflow-hidden">
               <div className="absolute inset-0 grid-bg opacity-30" />
               <div className="absolute -top-20 -right-20 w-64 h-64 bg-cyan-accent/20 rounded-full blur-3xl" />
-              <div className="relative h-full flex flex-col justify-between">
-                <div className="grid grid-cols-2 gap-4">
+              <div className="relative h-full flex flex-col justify-between gap-5">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {CIFRAS.map((c) => (
                     <div
                       key={c.label}
-                      className="bg-navy-900/60 backdrop-blur-sm border border-cyan-accent/20 rounded-2xl p-5"
+                      className="bg-navy-900/60 backdrop-blur-sm border border-cyan-accent/20 rounded-2xl p-4 sm:p-5 min-h-[110px] flex flex-col justify-center"
                     >
-                      <div className="font-display font-bold text-3xl md:text-4xl text-cyan-accent">{c.num}</div>
-                      <div className="text-xs md:text-sm text-slate-300 mt-1">{c.label}</div>
+                      <div className="font-display font-bold text-3xl md:text-4xl text-cyan-accent leading-none">{c.num}</div>
+                      <div className="text-xs md:text-sm text-slate-300 mt-2 leading-snug">{c.label}</div>
                     </div>
                   ))}
                 </div>
                 <div className="bg-navy-900/60 backdrop-blur-sm border border-cyan-accent/20 rounded-2xl p-5">
                   <div className="text-xs uppercase tracking-widest text-cyan-accent mb-2">Pilares</div>
-                  <div className="font-display font-bold text-white text-lg">
+                  <div className="font-display font-bold text-white text-base sm:text-lg leading-snug">
                     Responsabilidad · Confianza · Capacitación
                   </div>
                 </div>
@@ -561,7 +560,6 @@ function Contacto() {
               <div>
                 <div className="text-xs uppercase tracking-widest text-cyan-accent mb-1">Ubicación</div>
                 <div className="font-display font-bold text-white text-lg">{LOCATION}</div>
-                <div className="text-sm text-slate-400 mt-1">Tel. alt: {PHONE_ALT}</div>
               </div>
             </div>
           </div>
