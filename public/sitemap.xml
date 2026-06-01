@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://amaf.com.ar/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://amaf.com.ar/og.jpg</image:loc>
+      <image:title>AMAF Soluciones Técnicas - Ingeniería en redes y seguridad</image:title>
+      <image:caption>Fibra óptica, Starlink, CCTV y alarmas para industria, ISP y residencial en Argentina</image:caption>
+    </image:image>
+  </url>
+</urlset>

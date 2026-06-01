@@ -154,7 +154,7 @@ function Nav() {
         <a
           href={WHATSAPP_URL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2 bg-cyan-accent hover:bg-cyan-deep text-navy-950 hover:text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-all hover:shadow-lg hover:shadow-cyan-accent/30"
         >
           Solicitar presupuesto
@@ -192,7 +192,7 @@ function Nav() {
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="block bg-cyan-accent text-navy-950 font-semibold px-5 py-3 rounded-lg text-center mt-2"
               >
                 Solicitar presupuesto
@@ -249,7 +249,7 @@ function Hero() {
           <a
             href={WHATSAPP_URL}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-cyan-accent hover:bg-cyan-deep text-navy-950 hover:text-white font-semibold px-7 py-4 rounded-lg transition-all hover:shadow-2xl hover:shadow-cyan-accent/40 hover:scale-105"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -353,7 +353,7 @@ function Servicios() {
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-cyan-accent hover:text-white text-sm font-semibold group/btn"
                 >
                   Consultar por este servicio
@@ -510,17 +510,11 @@ function Testimonios() {
 }
 
 function Contacto() {
-  const [enviado, setEnviado] = useState(false)
-  const onSubmit = (e) => {
-    e.preventDefault()
-    const f = new FormData(e.currentTarget)
-    const nombre = f.get('nombre')
-    const tel = f.get('tel')
-    const mensaje = f.get('mensaje')
-    const texto = `Hola AMAF, soy ${nombre} (${tel}). ${mensaje}`
-    window.open(`https://wa.me/5492246508672?text=${encodeURIComponent(texto)}`, '_blank')
-    setEnviado(true)
-  }
+  const [form, setForm] = useState({ nombre: '', tel: '', mensaje: '' })
+  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  const texto = `Hola AMAF, soy ${form.nombre} (${form.tel}). ${form.mensaje}`
+  const waHref = `https://wa.me/5492246508672?text=${encodeURIComponent(texto)}`
+  const valido = form.nombre.trim() && form.tel.trim() && form.mensaje.trim()
 
   return (
     <section id="contacto" className="py-24 md:py-32 relative">
@@ -541,7 +535,7 @@ function Contacto() {
             <a
               href={WHATSAPP_URL}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="group flex items-start gap-4 bg-navy-900/60 border border-slate-800 hover:border-cyan-accent/40 rounded-xl p-5 transition-all"
             >
               <div className="w-12 h-12 rounded-lg bg-cyan-accent/10 border border-cyan-accent/30 flex items-center justify-center text-cyan-accent flex-shrink-0">
@@ -585,58 +579,67 @@ function Contacto() {
             </div>
           </div>
 
-          <form
-            onSubmit={onSubmit}
-            className="lg:col-span-3 bg-navy-900/60 border border-slate-800 rounded-2xl p-6 md:p-8 space-y-5"
-          >
+          <div className="lg:col-span-3 bg-navy-900/60 border border-slate-800 rounded-2xl p-6 md:p-8 space-y-5">
             <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <label className="text-xs uppercase tracking-widest text-slate-400 mb-2 block">Nombre</label>
+                <label htmlFor="form-nombre" className="text-xs uppercase tracking-widest text-slate-400 mb-2 block">Nombre</label>
                 <input
+                  id="form-nombre"
                   name="nombre"
-                  required
+                  value={form.nombre}
+                  onChange={onChange}
                   className="w-full bg-navy-950 border border-slate-700 focus:border-cyan-accent rounded-lg px-4 py-3 text-white outline-none transition-colors"
                   placeholder="Tu nombre"
                 />
               </div>
               <div>
-                <label className="text-xs uppercase tracking-widest text-slate-400 mb-2 block">Teléfono</label>
+                <label htmlFor="form-tel" className="text-xs uppercase tracking-widest text-slate-400 mb-2 block">Teléfono</label>
                 <input
+                  id="form-tel"
                   name="tel"
-                  required
                   type="tel"
+                  value={form.tel}
+                  onChange={onChange}
                   className="w-full bg-navy-950 border border-slate-700 focus:border-cyan-accent rounded-lg px-4 py-3 text-white outline-none transition-colors"
                   placeholder="+54 9..."
                 />
               </div>
             </div>
             <div>
-              <label className="text-xs uppercase tracking-widest text-slate-400 mb-2 block">
+              <label htmlFor="form-mensaje" className="text-xs uppercase tracking-widest text-slate-400 mb-2 block">
                 ¿En qué te podemos ayudar?
               </label>
               <textarea
+                id="form-mensaje"
                 name="mensaje"
-                required
                 rows="4"
+                value={form.mensaje}
+                onChange={onChange}
                 className="w-full bg-navy-950 border border-slate-700 focus:border-cyan-accent rounded-lg px-4 py-3 text-white outline-none transition-colors resize-none"
                 placeholder="Contanos brevemente tu proyecto, ubicación y necesidad..."
               />
             </div>
-            <button
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 bg-cyan-accent hover:bg-cyan-deep text-navy-950 hover:text-white font-semibold px-6 py-4 rounded-lg transition-all hover:shadow-2xl hover:shadow-cyan-accent/30"
+            <a
+              href={valido ? waHref : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-disabled={!valido}
+              onClick={(e) => { if (!valido) e.preventDefault() }}
+              className={`w-full inline-flex items-center justify-center gap-2 font-semibold px-6 py-4 rounded-lg transition-all ${
+                valido
+                  ? 'bg-cyan-accent hover:bg-cyan-deep text-navy-950 hover:text-white hover:shadow-2xl hover:shadow-cyan-accent/30 cursor-pointer'
+                  : 'bg-slate-700/50 text-slate-400 cursor-not-allowed'
+              }`}
             >
               Enviar por WhatsApp
               <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                 <path d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H4a1 1 0 110-2h8.586l-2.293-2.293a1 1 0 010-1.414z" />
               </svg>
-            </button>
-            {enviado && (
-              <p className="text-xs text-cyan-accent text-center">
-                Se abrió WhatsApp en una pestaña nueva. Si no, escribinos a {EMAIL}.
-              </p>
+            </a>
+            {!valido && (
+              <p className="text-xs text-slate-500 text-center">Completá los 3 campos para habilitar el botón.</p>
             )}
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -680,7 +683,7 @@ function Footer() {
           <div>
             <h4 className="font-display font-semibold text-white mb-4">Contacto</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hover:text-cyan-accent transition-colors">WhatsApp: {PHONE_DISPLAY}</a></li>
+              <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-accent transition-colors">WhatsApp: {PHONE_DISPLAY}</a></li>
               <li><a href={`mailto:${EMAIL}`} className="hover:text-cyan-accent transition-colors">{EMAIL}</a></li>
               <li>{LOCATION}</li>
             </ul>
@@ -701,7 +704,7 @@ function WhatsAppFloat() {
     <a
       href={WHATSAPP_URL}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
       className="fixed bottom-6 right-6 z-40 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] text-white flex items-center justify-center shadow-2xl shadow-[#25D366]/40 hover:scale-110 transition-all"
     >
